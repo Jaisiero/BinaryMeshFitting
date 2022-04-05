@@ -3,6 +3,7 @@
 #include "Core.hpp"
 
 #include <glm/ext.hpp>
+#include <glm/gtx/euler_angles.hpp>
 
 using namespace glm;
 

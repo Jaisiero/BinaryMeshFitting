@@ -74,7 +74,7 @@ namespace NoiseSamplers
 		Sampler s;
 		s.value = f;
 		s.gradient = std::bind(implicit_gradient, f, _1, _2, _3);
-		for (int i = 0; i < 8; i++)
+		for (int i = 0; i < Sampler::NOISE_SAMPLERS_NUM; i++)
 			s.noise_samplers[i] = FastNoiseSIMD::NewFastNoiseSIMD();
 		return s;
 	}
@@ -84,7 +84,7 @@ namespace NoiseSamplers
 		using namespace std::placeholders;
 		s->value = noise3d;
 		s->gradient = std::bind(implicit_gradient, noise3d, _1, _2, _3);
-		for (int i = 0; i < 8; i++)
+		for (int i = 0; i < Sampler::NOISE_SAMPLERS_NUM; i++)
 			s->noise_samplers[i] = FastNoiseSIMD::NewFastNoiseSIMD();
 		s->block = std::bind(noise3d_block, *s, _1, _2, _3, _4, _5, _6, _7, _8, _9, _10);
 	}
@@ -94,7 +94,7 @@ namespace NoiseSamplers
 		using namespace std::placeholders;
 		s->value = noise3d;
 		s->gradient = std::bind(implicit_gradient, noise3d, _1, _2, _3);
-		for (int i = 0; i < 8; i++)
+		for (int i = 0; i < Sampler::NOISE_SAMPLERS_NUM; i++)
 			s->noise_samplers[i] = FastNoiseSIMD::NewFastNoiseSIMD();
 		s->block = std::bind(terrain2d_block, *s, _1, _2, _3, _4, _5, _6, _7, _8, _9, _10);
 	}
@@ -104,7 +104,7 @@ namespace NoiseSamplers
 		using namespace std::placeholders;
 		s->value = noise3d;
 		s->gradient = std::bind(implicit_gradient, noise3d, _1, _2, _3);
-		for (int i = 0; i < 8; i++)
+		for (int i = 0; i < Sampler::NOISE_SAMPLERS_NUM; i++)
 			s->noise_samplers[i] = FastNoiseSIMD::NewFastNoiseSIMD();
 		s->block = std::bind(terrain2d_pert_block, *s, _1, _2, _3, _4, _5, _6, _7, _8, _9, _10);
 	}
@@ -114,7 +114,7 @@ namespace NoiseSamplers
 		using namespace std::placeholders;
 		s->value = noise3d;
 		s->gradient = std::bind(implicit_gradient, noise3d, _1, _2, _3);
-		for (int i = 0; i < 8; i++)
+		for (int i = 0; i < Sampler::NOISE_SAMPLERS_NUM; i++)
 			s->noise_samplers[i] = FastNoiseSIMD::NewFastNoiseSIMD();
 		s->block = std::bind(terrain3d_block, *s, _1, _2, _3, _4, _5, _6, _7, _8, _9, _10);
 	}
@@ -124,7 +124,7 @@ namespace NoiseSamplers
 		using namespace std::placeholders;
 		s->value = noise3d;
 		s->gradient = std::bind(implicit_gradient, noise3d, _1, _2, _3);
-		for (int i = 0; i < 8; i++)
+		for (int i = 0; i < Sampler::NOISE_SAMPLERS_NUM; i++)
 			s->noise_samplers[i] = FastNoiseSIMD::NewFastNoiseSIMD();
 		s->block = std::bind(terrain3d_pert_block, *s, _1, _2, _3, _4, _5, _6, _7, _8, _9, _10);
 	}
@@ -134,7 +134,7 @@ namespace NoiseSamplers
 		using namespace std::placeholders;
 		s->value = noise3d;
 		s->gradient = std::bind(implicit_gradient, noise3d, _1, _2, _3);
-		for (int i = 0; i < 8; i++)
+		for (int i = 0; i < Sampler::NOISE_SAMPLERS_NUM; i++)
 			s->noise_samplers[i] = FastNoiseSIMD::NewFastNoiseSIMD();
 		s->block = std::bind(windy3d_block, *s, _1, _2, _3, _4, _5, _6, _7, _8, _9, _10);
 	}

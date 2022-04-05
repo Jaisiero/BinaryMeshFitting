@@ -26,7 +26,7 @@
 #include <climits>
 #include <cstddef>
 
-template <typename T, size_t BlockSize = 4096>
+template <typename T, size_t BlockSize = 32768>
 class MemoryPool
 {
 public:

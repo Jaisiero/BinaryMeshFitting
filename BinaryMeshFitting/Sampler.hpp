@@ -23,13 +23,14 @@ typedef std::function<glm::vec3(const float world_size, const glm::vec3& p, floa
 
 struct Sampler
 {
+	static const int NOISE_SAMPLERS_NUM = 64;
 	float world_size;
 	SamplerValueFunction value;
 	SamplerBlockFunction block;
 	SamplerGradientFunction gradient;
-	FastNoiseSIMD* noise_samplers[8];
+	FastNoiseSIMD* noise_samplers[NOISE_SAMPLERS_NUM];
 
-	inline Sampler() { for (int i = 0; i < 8; i++) noise_samplers[i] = 0; }
+	inline Sampler() { for (int i = 0; i < NOISE_SAMPLERS_NUM; i++) noise_samplers[i] = 0; }
 	inline virtual ~Sampler() {}
 };
 
